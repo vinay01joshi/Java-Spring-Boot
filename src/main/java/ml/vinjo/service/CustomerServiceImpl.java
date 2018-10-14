@@ -8,13 +8,15 @@ import ml.vinjo.repository.HibernateCustomerRepositoryImpl;
 
 public class CustomerServiceImpl implements CustomerService {
 	
-	private CustomerRepository cusotmerRepository  = new HibernateCustomerRepositoryImpl();
+	private CustomerRepository cusotmerRepository ;
 	
-	/* (non-Javadoc)
-	 * @see ml.vinjo.service.CustomerService#FindAll()
-	 */
 	@Override
 	public List<Customer> FindAll() {
 		return 	cusotmerRepository.FindAll();
+	}
+
+	
+	public void setCusotmerRepository(CustomerRepository cusotmerRepository) {
+		this.cusotmerRepository = cusotmerRepository;
 	}
 }
